@@ -12,4 +12,4 @@ jobs:
         run: |
           git remote add internal https://gitlab-ci-token:${{ secrets.GL_TOKEN }}@gitlab.hanaboso.net/husak.j/github-poc.git
           # toho: resolve name clashes
-          git push internal ${{ github.GITHUB_BASE_REF }}
+          git push internal ${GITHUB_HEAD_REF}
