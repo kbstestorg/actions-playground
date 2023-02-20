@@ -11,5 +11,5 @@ jobs:
       - name: Pass the PR branch to internal GL to run pipelines
         run: |
           git remote add internal https://gitlab-ci-token:${{ secrets.GL_TOKEN }}@gitlab.hanaboso.net/husak.j/github-poc.git
-          # toho: resolve name clashes
+          git status
           git push internal ${GITHUB_HEAD_REF}
