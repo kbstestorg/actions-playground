@@ -10,6 +10,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Pass the PR branch to internal GL to run pipelines
         run: |
-          git remote add internal https://gitlab-ci-token:${GL_TOKEN}@gitlab.hanaboso.net/husak.j/github-poc.git
+          git remote add internal https://gitlab-ci-token:${{ secrets.GL_TOKEN }}@gitlab.hanaboso.net/husak.j/github-poc.git
           # toho: resolve name clashes
-          git push internal ${GITHUB_BASE_REF}
+          git push internal ${{ github.GITHUB_BASE_REF }}
